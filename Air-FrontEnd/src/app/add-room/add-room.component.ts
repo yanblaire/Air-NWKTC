@@ -27,7 +27,7 @@ export class AddRoomComponent {
       alert('Please fill all required fields.');
       return;
     }
-    this.refreshPage();
+    this.router.navigate(['/dashboard']);
 
     const roomData = {
       RoomName: roomName,

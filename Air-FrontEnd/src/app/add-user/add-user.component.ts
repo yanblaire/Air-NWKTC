@@ -43,7 +43,7 @@ export class AddUserComponent {
     })
     .then(data => {
       console.log('User added:', data);
-      this.refreshPage();  // Call to refresh the current route
+      this.router.navigate(['/dashboard']);  // Call to refresh the current route
     })
     .catch(error => {
       console.error('Error adding user:', error);
