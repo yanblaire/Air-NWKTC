@@ -1,26 +1,30 @@
 <div class="dashboard-container">
     <h2>Dashboard</h2>
-    <div class="panel total-rooms">
-      <h2>Total Rooms: {{ totalRooms }}</h2>
-      <p>Available Rooms: {{ availableRooms }}</p>
-      <p>Booked Rooms: {{ bookedRooms }}</p>
+    <div class="top">
+        <div class="panel total-rooms">
+            <h2>Total Rooms: {{ totalRooms }}</h2>
+            <p>Available Rooms: {{ availableRooms }}</p>
+            <p>Booked Rooms: {{ bookedRooms }}</p>
+          </div>
+        
+          <div class="panel user-counts">
+            <h2>Users</h2>
+            <p>Total Instructors: {{ totalInstructors }}</p>
+            <p>Total Administrators: {{ totalAdministrators }}</p>
+          </div>
     </div>
   
-    <div class="panel user-counts">
-      <h2>User Stats</h2>
-      <p>Total Instructors: {{ totalInstructors }}</p>
-      <p>Total Administrators: {{ totalAdministrators }}</p>
+    <div class="bottom">
+        <div class="panel recent-bookings">
+            <h2>Bookings</h2>
+            <p>Total Bookings: {{ totalBookings }}</p>
+          </div>
+          
+          <div class="panel actions">
+              <button (click)="navigateTo('rooms')">Add New Room</button>
+              <button (click)="navigateTo('bookings')">Manage a Booking</button>
+              <button (click)="navigateTo('users')">Add User</button>
+          </div>
     </div>
-  
-    <div class="panel recent-bookings">
-      <h2>Recent Bookings</h2>
-      <p>Total Bookings: {{ totalBookings }}</p>
-    </div>
-    
-    <div class="panel actions">
-        <button (click)="navigateTo('rooms')">Add New Room</button>
-        <button (click)="navigateTo('bookings')">Manage a Booking</button>
-        <button (click)="navigateTo('users')">Add User</button>
-      </div>
 </div>
   

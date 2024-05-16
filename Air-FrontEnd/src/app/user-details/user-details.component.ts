@@ -63,16 +63,20 @@ export class UserDetailsComponent implements OnInit {
   }
 
   deleteUser(): void {
-    fetch(`http://localhost:3000/api/user/${this.userDetails.UserID}`, {
-      method: 'DELETE'
-    })
-    .then(response => {
-      if (!response.ok) throw new Error('Failed to delete user');
-      console.log('User deleted successfully');
-      this.router.navigate(['/users']); // Or any other route
-    })
-    .catch(error => console.error('Error deleting user:', error));
+    const confirmed = window.confirm('Are you sure you want to delete this user?');
+    if (confirmed) {
+      fetch(`http://localhost:3000/api/user/${this.userDetails.UserID}`, {
+        method: 'DELETE'
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to delete user');
+        window.alert('User deleted successfully');
+        this.router.navigate(['/users']); // Or any other route
+      })
+      .catch(error => console.error('Error deleting user:', error));
+    }
   }
+
 
   goBack(): void {
     this.router.navigate(['/users']); // Navigate back to the user list

@@ -1,57 +1,62 @@
-<div>
+<button class="backButton" type="button" (click)="goBack()">Go Back</button>
+<div class="booking-details-container">
     <h2>Booking Details</h2>
-    <p><strong>Course:</strong> {{ originalBookingDetails?.Course }}</p>
-    <p><strong>Start Time:</strong><span>{{ originalBookingDetails?.BookingStartTime | date:'fullDate' }}</span> at <span>{{ originalBookingDetails?.BookingStartTime | date:'HH:mm' }}</span></p>
-    <p><strong>End Time:</strong> <span>{{ originalBookingDetails?.BookingEndTime | date:'fullDate' }}</span> at <span>{{ originalBookingDetails?.BookingEndTime | date:'HH:mm' }}</span></p>
-    <p><strong>Duration:</strong> {{ originalBookingDetails?.BookingDuration }}</p>
-    <p><strong>Status:</strong> {{ originalBookingDetails?.Status }}</p>
-</div>
-
-<div *ngIf="roomDetails">
-    <h2>Room Details</h2>
-    <p><strong>Room Name:</strong> {{ roomDetails?.RoomName }}</p>
-    <p><strong>Capacity:</strong> {{ roomDetails?.Capacity }}</p>
-</div>
-
-<div *ngIf="userDetails">
-    <h2>Instructor Details</h2>
-    <p><strong>First Name:</strong> {{ userDetails?.FirstName }}</p>
-    <p><strong>Last Name:</strong> {{ userDetails?.LastName }}</p>
-    <p><strong>Email:</strong> {{ userDetails?.Email }}</p>
-</div>
-
-<div *ngIf="booking">
-    <h2>Edit Booking Details</h2>
-    <form #bookingForm="ngForm" (ngSubmit)="updateBooking()">
-      <div>
-        <label for="course">Course:</label>
-        <input type="text" id="course" [(ngModel)]="booking.Course" name="course" required #course="ngModel">
-        <div *ngIf="course.invalid && course.touched" class="error">Course is required.</div>
+    <div class="detail-section">
+      <p><strong>Course:</strong> {{ originalBookingDetails?.Course }}</p>
+      <p><strong>Start Time:</strong><span>{{ originalBookingDetails?.BookingStartTime | date:'fullDate' }}</span> at <span>{{ originalBookingDetails?.BookingStartTime | date:'HH:mm' }}</span></p>
+      <p><strong>End Time:</strong> <span>{{ originalBookingDetails?.BookingEndTime | date:'fullDate' }}</span> at <span>{{ originalBookingDetails?.BookingEndTime | date:'HH:mm' }}</span></p>
+      <p><strong>Duration:</strong> {{ originalBookingDetails?.BookingDuration }}</p>
+      <p><strong>Status:</strong> {{ originalBookingDetails?.Status }}</p>
+    </div>
+  
+    <div *ngIf="roomDetails || userDetails" class="room-instructor-container">
+      <div *ngIf="roomDetails" class="detail-section">
+        <h2>Room Details</h2>
+        <p><strong>Room Name:</strong> {{ roomDetails?.RoomName }}</p>
+        <p><strong>Capacity:</strong> {{ roomDetails?.Capacity }}</p>
       </div>
-      <div>
-        <label for="startTime">Start Time:</label>
-        <input type="datetime-local" id="startTime" [(ngModel)]="booking.BookingStartTime" name="startTime" required #startTime="ngModel">
-        <div *ngIf="startTime.invalid && startTime.touched" class="error">Start Time is required.</div>
+      
+      <div *ngIf="userDetails" class="detail-section">
+        <h2>Instructor Details</h2>
+        <p><strong>First Name:</strong> {{ userDetails?.FirstName }}</p>
+        <p><strong>Last Name:</strong> {{ userDetails?.LastName }}</p>
+        <p><strong>Email:</strong> {{ userDetails?.Email }}</p>
       </div>
-      <div>
-        <label for="endTime">End Time:</label>
-        <input type="datetime-local" id="endTime" [(ngModel)]="booking.BookingEndTime" name="endTime" required #endTime="ngModel">
-        <div *ngIf="endTime.invalid && endTime.touched" class="error">End Time is required.</div>
-      </div>
-      <div>
-        <label for="status">Status:</label>
-        <select id="status" [(ngModel)]="booking.Status" name="status" required #status="ngModel">
-          <option value="Checked In">Checked In</option>
-          <option value="Checked Out">Checked Out</option>
-          <option value="Confirmed">Confirmed</option>
-        </select>
-        <div *ngIf="status.invalid && status.touched" class="error">Status is required.</div>
-      </div>
-      <button type="submit">Save Changes</button>
-      <button type="button" (click)="confirmDeleteBooking()">Delete Booking</button>
-    </form>
-    <button type="button" (click)="goBack()">Go Back</button>
-</div>
+    </div>
+  
+    <div *ngIf="booking" class="edit-booking">
+      <h2>Edit Booking Details</h2>
+      <form #bookingForm="ngForm" (ngSubmit)="updateBooking()">
+        <div>
+          <label for="course">Course:</label>
+          <input type="text" id="course" [(ngModel)]="booking.Course" name="course" required #course="ngModel">
+          <div *ngIf="course.invalid && course.touched" class="error">Course is required.</div>
+        </div>
+        <div>
+          <label for="startTime">Start Time:</label>
+          <input type="datetime-local" id="startTime" [(ngModel)]="booking.BookingStartTime" name="startTime" required #startTime="ngModel">
+          <div *ngIf="startTime.invalid && startTime.touched" class="error">Start Time is required.</div>
+        </div>
+        <div>
+          <label for="endTime">End Time:</label>
+          <input type="datetime-local" id="endTime" [(ngModel)]="booking.BookingEndTime" name="endTime" required #endTime="ngModel">
+          <div *ngIf="endTime.invalid && endTime.touched" class="error">End Time is required.</div>
+        </div>
+        <div>
+          <label for="status">Status:</label>
+          <select id="status" [(ngModel)]="booking.Status" name="status" required #status="ngModel">
+            <option value="Checked In">Checked In</option>
+            <option value="Checked Out">Checked Out</option>
+            <option value="Confirmed">Confirmed</option>
+          </select>
+          <div *ngIf="status.invalid && status.touched" class="error">Status is required.</div>
+        </div>
+        <button type="submit">Save Changes</button>
+        <button type="button" (click)="confirmDeleteBooking()">Delete Booking</button>
+      </form>
+    </div>
+  </div>
+  
 
   
 

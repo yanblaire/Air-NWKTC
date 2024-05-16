@@ -2,3 +2,102 @@
     color: red;
     font-size: 0.9em;
   }
+  .booking-details-container {
+    background-color: #0c0c0c79;
+    border-radius: 10px;
+    text-align: center;
+    width: 70vw;
+    margin: 20px auto;
+    padding: 20px;
+    color: #F2613F;
+  }
+  
+  h2 {
+    background-color: #481E14;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    padding: 10px;
+  }
+  
+  .detail-section {
+    background-color: rgba(255, 255, 255, 0.692);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #F2613F;
+  }
+  
+  .detail-section p {
+    margin: 10px 0;
+  }
+  
+  .edit-booking {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .edit-booking form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-booking label {
+    color: #ff4500;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .edit-booking input[type="text"],
+  .edit-booking input[type="datetime-local"],
+  .edit-booking select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .edit-booking .error {
+    color: red;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: black;
+    border: none;
+    padding: 10px 20px;
+    color: #F2613F;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #481E14;
+  }
+  
+  .room-instructor-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .room-instructor-container .detail-section {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+
+  /* to add margin on top */
+
+.backButton{
+    margin-top: 40vh;
+}
+  

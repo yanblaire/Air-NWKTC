@@ -25,24 +25,24 @@ button {
     margin-bottom: 10px; /* space between inputs */
     border: none;
     border-radius: 5px;
-    background-color: #ffffff; /* white background */
+    background-color: #ffffff;
 }
 
 button {
-    color: white;
-    background-color: #4CAF50; /* Green background */
+    color: #F2613F;
+    background-color: #0C0C0C; 
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #481E14; 
 }
 
 label {
     margin-bottom: 5px;
     font-size: 14px;
-    color: #333; /* Dark grey color for text */
+    color: #F2613F; 
 }
 
 input[type="checkbox"] {

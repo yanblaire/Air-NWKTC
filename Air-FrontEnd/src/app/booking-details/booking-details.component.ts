@@ -17,6 +17,18 @@ export class BookingDetailsComponent implements OnInit {
   userDetails: any = null;
 
   constructor(private route: ActivatedRoute, private router: Router) {}
+  // Utility function to format datetime values
+  formatDatetime(datetime: string): string {
+    const date = new Date(datetime);
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + date.getDate()).slice(-2);
+    const hours = ('0' + date.getHours()).slice(-2);
+    const minutes = ('0' + date.getMinutes()).slice(-2);
+    const seconds = ('0' + date.getSeconds()).slice(-2);
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  }
+
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -79,16 +91,26 @@ export class BookingDetailsComponent implements OnInit {
       })
       .catch(error => console.error('Error fetching user details:', error));
   }
+
+  // for some reason, it says failed to update booking but it does update in my databse.
   updateBooking(): void {
     if (!this.booking.Course || !this.booking.BookingStartTime || !this.booking.BookingEndTime) {
       window.alert('Please fill all required fields: Course, Start Time, and End Time.');
       return;
     }
 
+    const formattedStartTime = this.formatDatetime(this.booking.BookingStartTime);
+    const formattedEndTime = this.formatDatetime(this.booking.BookingEndTime);
+
     fetch(`http://localhost:3000/api/booking/${this.booking.BookingID}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(this.booking)
+      body: JSON.stringify({
+        Course: this.booking.Course,
+        BookingStartTime: formattedStartTime,
+        BookingEndTime: formattedEndTime,
+        Status: this.booking.Status
+      })
     })
     .then(response => {
       if (!response.ok) {
@@ -96,7 +118,10 @@ export class BookingDetailsComponent implements OnInit {
       }
       return response.json();
     })
-    .then(() => this.router.navigate(['/bookings']))
+    .then(() => {
+      window.alert('Booking updated successfully');
+      this.router.navigate(['/bookings']);
+    })
     .catch(error => {
       console.error('Error updating booking:', error);
       window.alert('Error updating booking, make sure Course, Start Time, and End Time is filled');

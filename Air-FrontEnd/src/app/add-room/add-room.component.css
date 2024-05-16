@@ -3,8 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f4f4f4; /* Light gray background */
     padding: 20px;
+    width: 20vw;
+    height: 60vh;
 }
 
 /* Styling the form element itself */
@@ -21,7 +22,7 @@ form {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: #F2613F;
 }
 
 /* Style for input fields to make them more appealing */
@@ -43,8 +44,8 @@ input[type="checkbox"] {
 
 /* Styles for buttons to make them more attractive */
 button {
-    background-color: #0056b3;
-    color: white;
+    background-color: #0C0C0C;
+    color: #F2613F;
     border: none;
     padding: 10px 20px;
     text-transform: uppercase;
@@ -54,7 +55,7 @@ button {
 }
 
 button:hover {
-    background-color: #004494;
+    background-color: #481E14;
 }
 
 /* Home button styling */
