@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: May 16, 2024 at 06:52 PM
+-- Generation Time: May 16, 2024 at 07:11 PM
 -- Server version: 8.3.0
 -- PHP Version: 8.2.17
 
@@ -73,7 +73,8 @@ INSERT INTO `Room` (`RoomID`, `RoomName`, `Capacity`, `Availability`) VALUES
 (373, 'Electrical', 54, 1),
 (374, '1st Year Room', 56, 0),
 (375, 'Computer Room', 23, 0),
-(377, 'Comfort Room', 1, 1);
+(377, 'Comfort Room', 1, 1),
+(378, 'Testing Room', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -96,11 +97,13 @@ CREATE TABLE `User` (
 --
 
 INSERT INTO `User` (`UserID`, `FirstName`, `LastName`, `Password`, `Email`, `Role`, `EthAddress`) VALUES
-(5, 'Sala', 'Mander', 'password', 'salamander@nwktc.edu', 'instructor', '0x20f53c1cB6Cc4785465488999C94d46D1130E193'),
-(8, 'Hello', 'World', 'password', 'sampleemail@gmail.com', 'instructor', '0x41659E775c8D3a22404CDE20B9A05F3411dE2026'),
+(5, 'Omar', 'Lopez', 'password', 'omarlopez@nwktc.edu', 'instructor', '0x20f53c1cB6Cc4785465488999C94d46D1130E193'),
 (9, 'Marco', 'Polo', 'password', 'shoutit@nwktc.edu', 'instructor', 'x3aEaC3E1644A6678421ee196FE4200b91E5844B5'),
 (10, 'Westy', 'Bestie', 'password', 'westy@nwktc.edu', 'instructor', '0x3Ab037146909231678E4349e0D9D977983152e61'),
-(11, 'Yan Blaire', 'Dologuin', 'password', 'yandologuin@nwktc.edu', 'administrator', '0x5f5Ff9B4334A54a072d1D263C30AB4cA2a06dca6');
+(11, 'Yan Blaire', 'Dologuin', 'password', 'yandologuin@nwktc.edu', 'administrator', '0x5f5Ff9B4334A54a072d1D263C30AB4cA2a06dca6'),
+(12, 'Jeremy', 'Skrdlant', 'password', 'jeremyskrdlant@nwktc.edu', 'administrator', '0xA0035DA436D6EEe2E1963fdF979fe2122D6d302b'),
+(13, 'Isaac', 'Guy', 'password', 'isaac@nwktc.edu', 'instructor', '0x39C4319e1a96592d985aa391733f71a063eB883C'),
+(21, 'Hello', 'World', 'password', 'helloworld@nwktc.edu', 'instructor', '0x5016fF8463137bCb590590A3c798446D11B7DdD2');
 
 --
 -- Indexes for dumped tables
@@ -138,13 +141,13 @@ ALTER TABLE `Booking`
 -- AUTO_INCREMENT for table `Room`
 --
 ALTER TABLE `Room`
-  MODIFY `RoomID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=378;
+  MODIFY `RoomID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=379;
 
 --
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `UserID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `UserID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
