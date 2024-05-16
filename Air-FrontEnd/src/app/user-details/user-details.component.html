@@ -1,0 +1,45 @@
+<div class="user-details">
+    <h2>User Details</h2>
+
+    <!-- Display-only section for original data -->
+    <div class="main">
+        <div class="original-data">
+            <h3>Original User Details</h3>
+            <p><strong>First Name:</strong> {{ originalUserDetails?.FirstName }}</p>
+            <p><strong>Last Name:</strong> {{ originalUserDetails?.LastName }}</p>
+            <p><strong>Password:</strong> {{ originalUserDetails?.Password }}</p>
+            <p><strong>Email:</strong> {{ originalUserDetails?.Email }}</p>
+            <p><strong>Role:</strong> {{ originalUserDetails?.Role }}</p>
+            <p><strong>Ethereum Address:</strong> {{ originalUserDetails?.EthAddress }}</p>
+        </div>
+    
+        <!-- Editable fields for updating data -->
+        <div class="edit-data">
+            <h3>Edit User</h3>
+            <div>
+                <label for="firstName">First Name:</label>
+                <input id="firstName" [(ngModel)]="userDetails.FirstName" class="form-control" placeholder="Enter First Name">
+            </div>
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input id="lastName" [(ngModel)]="userDetails.LastName" class="form-control" placeholder="Enter Last Name">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input id="email" type="email" [(ngModel)]="userDetails.Email" class="form-control" placeholder="Enter Email">
+            </div>
+            <div>
+                <label for="role">Role:</label>
+                <input id="role" [(ngModel)]="userDetails.Role" class="form-control" placeholder="Enter Role">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input id="password" type="password" [(ngModel)]="userDetails.Password" class="form-control" placeholder="Enter New Password">
+            </div>
+            <button (click)="updateUser()">Save Changes</button>
+        </div>
+    </div>
+
+    <button (click)="deleteUser()">Delete User</button>
+    <button (click)="goBack()">Back</button>
+</div>

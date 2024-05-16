@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+.col {
+    flex: 1;
+    padding: 10px;
+}
+li{
+    cursor: pointer;
+}

@@ -1,0 +1,66 @@
+/* Styles for the entire form container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 20px;
+}
+
+/* Styling the form element itself */
+form {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px; /* Maximum width of the form */
+}
+
+/* Styling labels for better readability */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Style for input fields to make them more appealing */
+input[type="text"],
+input[type="number"],
+input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Checkbox might need a bit different handling to align label with the checkbox */
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Styles for buttons to make them more attractive */
+button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+/* Home button styling */
+
+.back{
+    position: absolute;
+    left: 10rem;
+    top: 5rem;
+}

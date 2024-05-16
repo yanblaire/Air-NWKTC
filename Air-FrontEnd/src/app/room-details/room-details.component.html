@@ -1,0 +1,39 @@
+<div class="room-details">
+    <h2>Room Details</h2>
+
+    <!-- Display-only section for original data -->
+    <div class="original-data">
+        <h3>Original Room Details</h3>
+        <p><strong>Room Name:</strong> {{ originalRoomDetails?.RoomName }}</p>
+        <p><strong>Capacity:</strong> {{ originalRoomDetails?.Capacity }}</p>
+        <p><strong>Availability:</strong> {{ originalRoomDetails?.Availability ? 'Available' : 'Not Available' }}</p>
+    </div>
+
+    <!-- Editable fields for updating data -->
+    <div class="edit-data">
+        <h3>Edit Room</h3>
+        <div>
+            <label for="roomName">New Room Name:</label>
+            <input id="roomName" [(ngModel)]="roomDetails.RoomName" name="roomName" class="form-control" placeholder="Enter new room name" required #roomName="ngModel">
+            <div *ngIf="roomName.touched && roomName.errors?.['required']" class="alert alert-danger">
+                Room name is required.
+            </div>
+        </div>
+        <div>
+            <label for="capacity">New Capacity:</label>
+            <input id="capacity" [(ngModel)]="roomDetails.Capacity" name="capacity" type="number" class="form-control" placeholder="Enter new capacity" required min="1" #capacity="ngModel">
+            <div *ngIf="capacity.touched && capacity.errors?.['required']" class="alert alert-danger">
+                Capacity is required.
+            </div>
+        </div>
+        <div>
+            <label>Change Availability:</label>
+            <input type="checkbox" [(ngModel)]="roomDetails.Availability"> Available
+        </div>
+        <button (click)="updateRoom()" class="btn btn-primary">Save Changes</button>
+    </div>
+
+    <button (click)="deleteRoom()" (click)="goBack()"class="btn btn-danger">Delete Room</button>
+</div>
+<button (click)="goBack()" class="btn btn-secondary">Back</button>
+

@@ -1,0 +1,66 @@
+<!-- @if (!sign.signer) {
+  <div class="outerStyle">
+    <div class="connect" style="--clr:red">
+      <a (click)="sign.connectToWallet()"> Connect to Metamask</a>
+      <i></i>
+    </div>
+  </div>
+}
+
+@if (sign.signer &&  !sign.isSignedIn) {
+  <div class="outerStyle">
+    <div class="connect" style="--clr:yellow">
+      <a (click)="sign.validateCredentials()"> Verify Account</a>
+      <i></i>
+    </div>
+  </div>
+}
+
+@if (sign.isSignedIn) {
+  <div class="app-container">
+    <div class="sidebar">
+      <div class="logo">
+        <img src="../assets/HomePage/NWKTC-LOGO.png" alt="logo">
+        <h1>AIR - NWKTC</h1>
+      </div>
+      <ul>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/rooms">Rooms</a></li>
+        <li><a routerLink="/bookings">Bookings</a></li>
+        <li><a routerLink="/users">Users</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="header">
+        Hello World
+      </div>
+      <div class="body">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+} -->
+
+
+<div class="app-container">
+  <div class="sidebar">
+    <div class="logo">
+      <img src="../assets/HomePage/NWKTC-LOGO.png" alt="logo">
+      <h1>AIR - NWKTC</h1>
+    </div>
+    <ul>
+      <li routerLinkActive="active"><a routerLink="/dashboard">Dashboard</a></li>
+      <li routerLinkActive="active"><a routerLink="/rooms">Rooms</a></li>
+      <li routerLinkActive="active"><a routerLink="/bookings">Bookings</a></li>
+      <li routerLinkActive="active"><a routerLink="/users">Users</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <div class="header">
+      <p>Welcome</p>
+    </div>
+    <div class="body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

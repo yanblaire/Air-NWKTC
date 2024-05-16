@@ -1,0 +1,50 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #f0f0f0; /* Light grey background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow */
+    width: 300px; /* adjust width as needed */
+    margin: auto; /* center the form on the page */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+button {
+    padding: 10px;
+    margin-bottom: 10px; /* space between inputs */
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff; /* white background */
+}
+
+button {
+    color: white;
+    background-color: #4CAF50; /* Green background */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333; /* Dark grey color for text */
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}

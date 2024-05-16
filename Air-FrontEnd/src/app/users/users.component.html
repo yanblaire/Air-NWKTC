@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Administrators</h2>
+            <ul>
+                <li *ngFor="let user of administrators" (click)="goToUserDetails(user.UserID)">
+                    {{ user.FirstName }} {{ user.LastName }}
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <h2>Instructors</h2>
+            <ul>
+                <li *ngFor="let user of instructors" (click)="goToUserDetails(user.UserID)">
+                    {{ user.FirstName }} {{ user.LastName }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="addUser">
+        <app-add-user></app-add-user>
+    </div>
+</div>
+
+

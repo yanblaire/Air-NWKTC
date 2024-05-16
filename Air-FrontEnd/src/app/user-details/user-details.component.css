@@ -1,0 +1,39 @@
+.original-data {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.edit-data {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+.user-details input, .user-details button {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+}
+
+.btn-primary { background-color: #007bff; color: white; }
+.btn-danger { background-color: #dc3545; color: white; }
+.btn-secondary { background-color: #6c757d; color: white; }
+
+.btn {
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.main{  
+    display: flex;
+    justify-content: center;
+}

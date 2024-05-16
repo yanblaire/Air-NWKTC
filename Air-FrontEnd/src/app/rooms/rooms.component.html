@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Available Rooms</h2>
+        <ul>
+          <li *ngFor="let room of availableRooms" (click)="goToRoomDetails(room.RoomID)">
+            {{ room.RoomName }} - Capacity: {{ room.Capacity }}
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <h2>Booked Rooms</h2>
+        <ul>
+          <li *ngFor="let room of bookedRooms" (click)="goToRoomDetails(room.RoomID)">
+            {{ room.RoomName }} - Capacity: {{ room.Capacity }}
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <!-- Placeholder for Add Room Component -->
+        <app-add-room></app-add-room>
+      </div>
+    </div>
+  </div>
+  

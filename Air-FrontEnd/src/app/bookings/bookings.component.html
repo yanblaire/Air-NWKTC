@@ -1,0 +1,9 @@
+<div>
+    <h2>Bookings</h2>
+    <ul>
+      <li *ngFor="let booking of bookings" (click)="goToBookingDetails(booking.BookingID)">
+        {{ booking.Course }} - {{ booking.BookingStartTime | date:'short' }}
+      </li>
+    </ul>
+  </div>
+  
