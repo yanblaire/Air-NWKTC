@@ -15,9 +15,24 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                ZStack{
+                    Image("background")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .edgesIgnoringSafeArea(.all)
+                                        .blur(radius: 10)
+                                        .opacity(0.5)
+                    Image("nwktc-logo")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 300)
+
+
+                }
                 Text("Air - NWKTC")
                     .font(.largeTitle)
                     .padding()
+                    .foregroundColor(.red)
 
                 TextField("Email", text: $viewModel.email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -45,7 +60,8 @@ struct LoginView: View {
                 }) {
                     Text("Log In")
                         .padding()
-                        .background(Color.blue)
+                        .foregroundColor(.red)
+                        .background(Color.black)
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 }

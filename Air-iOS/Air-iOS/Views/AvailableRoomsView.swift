@@ -24,7 +24,9 @@ struct AvailableRoomsView: View {
                         NavigationLink(destination: BookingDetailsView(room: room)) {
                             VStack(alignment: .leading) {
                                 Text(room.name)
+                                    .foregroundColor(Color.red) // Red text color
                                 Text("Capacity: \(room.capacity)")
+                                    .foregroundColor(Color.red) // Red text color
                             }
                         }
                     }

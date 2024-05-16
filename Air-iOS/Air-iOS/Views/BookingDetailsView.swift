@@ -18,8 +18,10 @@ struct BookingDetailsView: View {
                 VStack {
                     Text(room.name)
                         .font(.title)
+                        .foregroundColor(Color.red) // Red text color
                     Text("Capacity: \(room.capacity)")
                         .padding()
+                        .foregroundColor(Color.red) // Red text color
 
                     Form {
                         Section(header: Text("Booking Details")) {
@@ -45,6 +47,11 @@ struct BookingDetailsView: View {
                                 ProgressView()
                             } else {
                                 Text("Book")
+                                    .padding()
+                                    .foregroundColor(.red)
+                                    .background(Color.black)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
                             }
                         }
                     }

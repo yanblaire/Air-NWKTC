@@ -18,7 +18,7 @@ struct BookedRoomsView: View {
                     Text("Welcome, \(user.firstName) \(user.lastName)!")
                         .font(.headline)
                         .padding()
-
+                        .foregroundColor(Color.red) // Red text color
                     if viewModel.isLoading {
                         ProgressView("Loading bookings...")
                     } else if let error = viewModel.error {
@@ -34,7 +34,10 @@ struct BookedRoomsView: View {
                                 Text("Duration: \(booking.bookingDuration)")
                                 Text("Status: \(booking.status)")
                             }
+                            .foregroundColor(Color.red) // Red text color
+                            .cornerRadius(10)
                         }
+                        .background(Color.black.opacity(0.5)) // Background for the form
                     }
 
                     Button(action: {
@@ -43,7 +46,8 @@ struct BookedRoomsView: View {
                         NavigationLink(destination: AvailableRoomsView()) {
                             Text("Book a room")
                                 .padding()
-                                .background(Color.blue)
+                                .foregroundColor(.red)
+                                .background(Color.black)
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
                         }
@@ -52,6 +56,7 @@ struct BookedRoomsView: View {
                 } else {
                     Text("No user data available.")
                 }
+                
             }
             .onAppear {
                 if let user = appState.currentUser {
